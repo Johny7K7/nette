@@ -8,19 +8,6 @@
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="nette"/>
-      <table id="2" parent="1" name="test"/>
-      <column id="3" parent="2" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="4" parent="2" name="name">
-        <mandatory>1</mandatory>
-        <data-type>char(1)</data-type>
-      </column>
-      <key id="5" parent="2" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
     </database-model>
   </data-source>
 </component>
