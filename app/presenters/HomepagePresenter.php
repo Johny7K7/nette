@@ -2,7 +2,8 @@
 
 namespace App\Presenters;
 
-use Nette;
+use Nette,
+    App\Model;
 
 
 class HomepagePresenter extends Nette\Application\UI\Presenter
@@ -18,8 +19,8 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
 
     public function renderDefault()
     {
-        $this->template->prispevky = $this->database->table('prispevky')
-            ->order('vytvorene DESC')
+        $this->template->posts = $this->database->table('posts')
+            ->order('created_at DESC')
             ->limit(5);
     }
 
