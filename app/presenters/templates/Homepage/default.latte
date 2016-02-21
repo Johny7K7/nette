@@ -2,6 +2,10 @@
 
 <h1 n:block="title">Moj uplne uzasny blog</h1>
 
+<a n:href="Post:create">Napisat novy prispevok</a>
+
+<br><hr>
+
 <div n:foreach="$posts as $post" class="post">
 
 <div class="date">{$post->created_at|date:'F j, Y'}</div>
@@ -9,6 +13,8 @@
 <h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
 
 <div>{$post->content}</div>
+
+<br><hr>
 
 </div>
 

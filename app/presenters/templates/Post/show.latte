@@ -2,10 +2,33 @@
 
 <p><a n:href="Homepage:default"><- Spat na vypis prispevkov</a></p>
 
-<div class="date">{$prispevok->vytvorene|date:'F j, Y'}</div>
+<h1 n:block="title">{$post->title}</h1>
 
-<h1 n:block="title">{$prispevok->nazov}</h1>
+<div class="date">{$post->created_at|date:'F j, Y'}</div>
 
-<div class="post">{$prispevok->obsah}</div>
+<br>
+
+<div class="post">{$post->content}</div>
+
+<hr>
+
+<a n:href="edit $post->id">Upravit prispevok</a>
+
+<hr>
+
+<h2>Komentare:</h2>
+
+<div class="comments">
+    {foreach $comments as $comment}
+        <p><b><a href="mailto:{$comment->email}" n:tag-if="$comment->email">{$comment->name}</a> Napisal:</b></p>
+        <div>{$comment->content}</div>
+    {/foreach}
+</div>
+
+<hr>
+
+<h2>Vlozte novy komentar</h2>
+
+{control commentForm}
 
 {/block}
